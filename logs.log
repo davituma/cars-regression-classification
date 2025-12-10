@@ -18769,3 +18769,102 @@ Please also refer to the documentation for alternative solver options:
                    random_state=123, solver='lbfgs', tol=0.0001, verbose=0,
                    warm_start=False)
 2025-12-10 18:54:23,587:INFO:tune_model() successfully completed......................................
+2025-12-10 19:04:12,079:INFO:Initializing plot_model()
+2025-12-10 19:04:12,080:INFO:plot_model(plot=error, fold=None, verbose=True, display=None, display_format=None, estimator=ExtraTreesRegressor(bootstrap=False, ccp_alpha=0.0, criterion='squared_error',
+                    max_depth=None, max_features=1.0, max_leaf_nodes=None,
+                    max_samples=None, min_impurity_decrease=0.0,
+                    min_samples_leaf=1, min_samples_split=2,
+                    min_weight_fraction_leaf=0.0, monotonic_cst=None,
+                    n_estimators=100, n_jobs=-1, oob_score=False,
+                    random_state=123, verbose=0, warm_start=False), feature_name=None, fit_kwargs=None, groups=None, label=False, plot_kwargs=None, save=False, scale=1, self=<pycaret.regression.oop.RegressionExperiment object at 0x000001F6CA560700>, system=True)
+2025-12-10 19:04:12,080:INFO:Checking exceptions
+2025-12-10 19:04:12,126:INFO:Preloading libraries
+2025-12-10 19:04:12,200:INFO:Copying training dataset
+2025-12-10 19:04:12,200:INFO:Plot type: error
+2025-12-10 19:04:12,384:INFO:Fitting Model
+2025-12-10 19:04:12,384:WARNING:c:\Users\Davi\anaconda3\envs\projeto_regressao\lib\site-packages\sklearn\base.py:493: UserWarning: X does not have valid feature names, but ExtraTreesRegressor was fitted with feature names
+  warnings.warn(
+
+2025-12-10 19:04:12,384:INFO:Scoring test/hold-out set
+2025-12-10 19:04:13,009:INFO:Visual Rendered Successfully
+2025-12-10 19:04:13,185:INFO:plot_model() successfully completed......................................
+2025-12-10 19:04:13,194:INFO:Initializing plot_model()
+2025-12-10 19:04:13,194:INFO:plot_model(plot=feature, fold=None, verbose=True, display=None, display_format=None, estimator=ExtraTreesRegressor(bootstrap=False, ccp_alpha=0.0, criterion='squared_error',
+                    max_depth=None, max_features=1.0, max_leaf_nodes=None,
+                    max_samples=None, min_impurity_decrease=0.0,
+                    min_samples_leaf=1, min_samples_split=2,
+                    min_weight_fraction_leaf=0.0, monotonic_cst=None,
+                    n_estimators=100, n_jobs=-1, oob_score=False,
+                    random_state=123, verbose=0, warm_start=False), feature_name=None, fit_kwargs=None, groups=None, label=False, plot_kwargs=None, save=False, scale=1, self=<pycaret.regression.oop.RegressionExperiment object at 0x000001F6CA560700>, system=True)
+2025-12-10 19:04:13,194:INFO:Checking exceptions
+2025-12-10 19:04:13,267:INFO:Preloading libraries
+2025-12-10 19:04:13,343:INFO:Copying training dataset
+2025-12-10 19:04:13,344:INFO:Plot type: feature
+2025-12-10 19:04:13,344:WARNING:No coef_ found. Trying feature_importances_
+2025-12-10 19:04:13,651:INFO:Visual Rendered Successfully
+2025-12-10 19:04:13,826:INFO:plot_model() successfully completed......................................
+2025-12-10 19:04:13,838:INFO:Initializing plot_model()
+2025-12-10 19:04:13,838:INFO:plot_model(plot=confusion_matrix, fold=None, verbose=True, display=None, display_format=None, estimator=LogisticRegression(C=0.049, class_weight='balanced', dual=False,
+                   fit_intercept=True, intercept_scaling=1, l1_ratio=None,
+                   max_iter=1000, multi_class='auto', n_jobs=None, penalty='l2',
+                   random_state=123, solver='lbfgs', tol=0.0001, verbose=0,
+                   warm_start=False), feature_name=None, fit_kwargs=None, groups=None, label=False, plot_kwargs=None, save=False, scale=1, self=<pycaret.classification.oop.ClassificationExperiment object at 0x000001F6D537D960>, system=True)
+2025-12-10 19:04:13,838:INFO:Checking exceptions
+2025-12-10 19:04:13,846:INFO:Preloading libraries
+2025-12-10 19:04:13,847:INFO:Copying training dataset
+2025-12-10 19:04:13,847:INFO:Plot type: confusion_matrix
+2025-12-10 19:04:14,054:INFO:Fitting Model
+2025-12-10 19:04:14,054:WARNING:c:\Users\Davi\anaconda3\envs\projeto_regressao\lib\site-packages\sklearn\base.py:493: UserWarning: X does not have valid feature names, but LogisticRegression was fitted with feature names
+  warnings.warn(
+
+2025-12-10 19:04:14,054:INFO:Scoring test/hold-out set
+2025-12-10 19:04:14,214:INFO:Visual Rendered Successfully
+2025-12-10 19:04:14,370:INFO:plot_model() successfully completed......................................
+2025-12-10 19:04:14,372:INFO:Initializing plot_model()
+2025-12-10 19:04:14,372:INFO:plot_model(plot=feature, fold=None, verbose=True, display=None, display_format=None, estimator=LogisticRegression(C=0.049, class_weight='balanced', dual=False,
+                   fit_intercept=True, intercept_scaling=1, l1_ratio=None,
+                   max_iter=1000, multi_class='auto', n_jobs=None, penalty='l2',
+                   random_state=123, solver='lbfgs', tol=0.0001, verbose=0,
+                   warm_start=False), feature_name=None, fit_kwargs=None, groups=None, label=False, plot_kwargs=None, save=False, scale=1, self=<pycaret.classification.oop.ClassificationExperiment object at 0x000001F6D537D960>, system=True)
+2025-12-10 19:04:14,372:INFO:Checking exceptions
+2025-12-10 19:04:14,377:INFO:Preloading libraries
+2025-12-10 19:04:14,378:INFO:Copying training dataset
+2025-12-10 19:04:14,378:INFO:Plot type: feature
+2025-12-10 19:04:14,711:INFO:Visual Rendered Successfully
+2025-12-10 19:04:14,868:INFO:plot_model() successfully completed......................................
+2025-12-10 19:12:41,964:INFO:Initializing plot_model()
+2025-12-10 19:12:41,965:INFO:plot_model(plot=error, fold=None, verbose=True, display=None, display_format=None, estimator=ExtraTreesRegressor(bootstrap=False, ccp_alpha=0.0, criterion='squared_error',
+                    max_depth=None, max_features=1.0, max_leaf_nodes=None,
+                    max_samples=None, min_impurity_decrease=0.0,
+                    min_samples_leaf=1, min_samples_split=2,
+                    min_weight_fraction_leaf=0.0, monotonic_cst=None,
+                    n_estimators=100, n_jobs=-1, oob_score=False,
+                    random_state=123, verbose=0, warm_start=False), feature_name=None, fit_kwargs=None, groups=None, label=False, plot_kwargs=None, save=False, scale=1, self=<pycaret.regression.oop.RegressionExperiment object at 0x000001F6CA560700>, system=True)
+2025-12-10 19:12:41,965:INFO:Checking exceptions
+2025-12-10 19:12:42,030:INFO:Preloading libraries
+2025-12-10 19:12:42,102:INFO:Copying training dataset
+2025-12-10 19:12:42,102:INFO:Plot type: error
+2025-12-10 19:12:42,257:INFO:Fitting Model
+2025-12-10 19:12:42,257:WARNING:c:\Users\Davi\anaconda3\envs\projeto_regressao\lib\site-packages\sklearn\base.py:493: UserWarning: X does not have valid feature names, but ExtraTreesRegressor was fitted with feature names
+  warnings.warn(
+
+2025-12-10 19:12:42,257:INFO:Scoring test/hold-out set
+2025-12-10 19:12:42,709:INFO:Visual Rendered Successfully
+2025-12-10 19:12:42,866:INFO:plot_model() successfully completed......................................
+2025-12-10 19:12:42,876:INFO:Initializing plot_model()
+2025-12-10 19:12:42,876:INFO:plot_model(plot=confusion_matrix, fold=None, verbose=True, display=None, display_format=None, estimator=LogisticRegression(C=0.049, class_weight='balanced', dual=False,
+                   fit_intercept=True, intercept_scaling=1, l1_ratio=None,
+                   max_iter=1000, multi_class='auto', n_jobs=None, penalty='l2',
+                   random_state=123, solver='lbfgs', tol=0.0001, verbose=0,
+                   warm_start=False), feature_name=None, fit_kwargs=None, groups=None, label=False, plot_kwargs=None, save=False, scale=1, self=<pycaret.classification.oop.ClassificationExperiment object at 0x000001F6D537D960>, system=True)
+2025-12-10 19:12:42,876:INFO:Checking exceptions
+2025-12-10 19:12:42,885:INFO:Preloading libraries
+2025-12-10 19:12:42,886:INFO:Copying training dataset
+2025-12-10 19:12:42,886:INFO:Plot type: confusion_matrix
+2025-12-10 19:12:43,061:INFO:Fitting Model
+2025-12-10 19:12:43,061:WARNING:c:\Users\Davi\anaconda3\envs\projeto_regressao\lib\site-packages\sklearn\base.py:493: UserWarning: X does not have valid feature names, but LogisticRegression was fitted with feature names
+  warnings.warn(
+
+2025-12-10 19:12:43,061:INFO:Scoring test/hold-out set
+2025-12-10 19:12:43,203:INFO:Visual Rendered Successfully
+2025-12-10 19:12:43,356:INFO:plot_model() successfully completed......................................

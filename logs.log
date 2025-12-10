@@ -18868,3 +18868,6 @@ Please also refer to the documentation for alternative solver options:
 2025-12-10 19:12:43,061:INFO:Scoring test/hold-out set
 2025-12-10 19:12:43,203:INFO:Visual Rendered Successfully
 2025-12-10 19:12:43,356:INFO:plot_model() successfully completed......................................
+2025-12-10 19:33:52,851:WARNING:c:\Users\Davi\anaconda3\envs\projeto_regressao\lib\site-packages\sklearn\base.py:493: UserWarning: X does not have valid feature names, but PolynomialFeatures was fitted with feature names
+  warnings.warn(
+

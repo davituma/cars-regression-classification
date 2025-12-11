@@ -11,7 +11,7 @@ Este repositório contém o projeto prático do 2º Bimestre, focado na aplicaç
 O projeto visa resolver dois problemas de negócio utilizando o dataset *Car Details v3*:
 
 1.  **Regressão (Precificação):** Prever o preço de venda (`selling_price`) de carros usados com base em características técnicas (motor, ano, quilometragem), comparando abordagens lineares e não-lineares.
-2.  **Classificação (Segmentação):** Identificar se um veículo possui transmissão **Automática** ou **Manual**, focando na recuperação (Recall) da classe minoritária.
+2.  **Classificação (Segmentação):** Identificar se um veículo possui transmissão **Automática** ou **Manual**, priorizando o equilíbrio entre precisão e recuperação (*F1-Score*) para evitar falsos positivos.
 
 ## 📂 Dados e Licença
 
@@ -24,8 +24,8 @@ O projeto foi desenvolvido em **Python 3.10+** utilizando as seguintes bibliotec
 * **Pandas & Numpy:** Manipulação e limpeza de dados.
 * **Seaborn & Matplotlib:** Visualização de dados (EDA).
 * **Statsmodels:** Regressão Linear Múltipla (OLS) e diagnóstico estatístico.
-* **Scikit-Learn:** Regressão Polinomial, Naive Bayes e Regressão Logística.
-* **PyCaret:** AutoML, otimização de hiperparâmetros e validação cruzada.
+* **Scikit-Learn:** Random Forest, Regressão Polinomial e Métricas de Avaliação.
+* **PyCaret:** AutoML, otimização de hiperparâmetros (Tuning) e comparação de modelos.
 
 ## 📊 Metodologia
 
@@ -34,28 +34,29 @@ O fluxo de trabalho seguiu as seguintes etapas:
 1.  **Coleta e Limpeza (EDA):**
     * Tratamento de strings nas colunas `engine`, `max_power` e `mileage`.
     * Aplicação de Log-Transformation no alvo (`selling_price`) para normalizar a distribuição.
-    * Testes de Hipótese (Teste T) e visualização gráfica (Pairplots, Heatmaps).
+    * Testes de Hipótese (Teste T) e visualização gráfica.
 2.  **Modelagem de Regressão (Progressiva):**
     * **Linear Simples:** Baseline com apenas 1 variável.
     * **Polinomial (Grau 2):** Captura de curvas de valorização em carros potentes.
-    * **Múltipla (OLS):** Modelo completo com todas as variáveis e análise de significância ($P > |t|$).
+    * **Múltipla (OLS):** Modelo completo com análise de significância ($P > |t|$).
 3.  **Classificação e Otimização:**
-    * Classificação via **Naive Bayes** e **Regressão Logística**.
-    * Uso do **PyCaret** para comparar modelos, realizar *tuning* e balanceamento de classes.
+    * Comparação inicial focada em *Recall* (Regressão Logística).
+    * **Pivô de Estratégia:** Alteração da métrica alvo para **F1-Score** via PyCaret para reduzir alarmes falsos.
+    * Seleção final do **Random Forest Classifier** com balanceamento de classes.
 
 ## 🚀 Resultados Alcançados
 
-A inclusão de modelos não-lineares e a otimização via PyCaret trouxeram ganhos expressivos:
+A evolução das métricas demonstrou que modelos baseados em árvore (Tree-Based) superaram significativamente os modelos lineares neste dataset:
 
 | Tarefa | Modelo | Métrica Principal | Resultado | Observação |
 | :--- | :--- | :--- | :--- | :--- |
-| **Regressão** | Polinomial (Apenas Potência) | $R^2$ | 0.55 | Capturou a curvatura, mas faltam dados. |
-| **Regressão** | **Linear Múltipla (OLS)** | **$R^2$** | **0.87** | **Excelente ajuste para um modelo linear.** |
-| **Regressão** | PyCaret (Extra Trees/LightGBM) | $R^2$ | 0.96 | Melhor performance geral. |
-| **Classificação** | Regressão Logística (Base) | Recall (Auto) | 0.52 | Errava metade dos automáticos. |
-| **Classificação** | **Regressão Logística (Tunada)** | **Recall (Auto)** | **0.81** | **+55% de ganho na detecção.** |
+| **Regressão** | Polinomial (Apenas Potência) | $R^2$ | 0.55 | Capturou a curvatura, mas insuficiente. |
+| **Regressão** | Linear Múltipla (OLS) | $R^2$ | 0.87 | Bom ajuste, mas sensível a outliers. |
+| **Regressão** | **PyCaret (Extra Trees)** | **$R^2$** | **0.96** | **Melhor performance (Erro médio ~16%).** |
+| **Classificação** | Regressão Logística (Inicial) | Precisão | 0.47 | Muitos falsos positivos (ruído alto). |
+| **Classificação** | **Random Forest (Final)** | **Precisão** | **0.85** | **Alta confiabilidade com Acurácia de ~95%.** |
 
-> **Conclusão:** O modelo final de regressão consegue explicar **96%** da variação de preços do mercado. Na classificação, conseguimos mitigar o problema do desbalanceamento, elevando a detecção de automáticos para um nível operacionalmente seguro.
+> **Conclusão:** O modelo final de regressão explica **96%** da variação de preços. Na classificação, a mudança para o Random Forest eliminou drasticamente os erros de "alarme falso" (redução de 280 para 30 erros), entregando um modelo seguro para produção.
 
 ## 📂 Estrutura do Repositório
 
